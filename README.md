@@ -1,23 +1,4 @@
-# Learn Chaincode
-
-A tutorial to get you started with writing smart contracts for Hyperledger.
-
-# Deployment
-
-In order to support multiple versions of the Hyperledger fabric, this repository uses branches in combination with gopkg.in URLs. What does this mean for beginners? Just pick the branch below and use the instructions for that branch to complete the tutorial
-
-## Versions and Supported Platforms
-
-- [v1.0](https://github.com/ibm-blockchain/learn-chaincode/tree/v1.0)
-
-  - Hyperledger fabric v0.5-developer-preview
-  - IBM Bluemix Blockchain Service v0.4.2
-
-- [v2.0](https://github.com/ibm-blockchain/learn-chaincode/tree/v2.0)
-
-  - Hyperledger fabric v0.6-developer-preview
-
-If you'd like to just deploy the sample code without completing the tutorial, then use the following URLs for the path parameter when deploying via the fabric REST API. Choose the URL that corresponds to the branch you are using above.
+# Learn Chaincodeploy the sample code without completing the tutorial, then use the following URLs for the path parameter when deploying via the fabric REST API. Choose the URL that corresponds to the branch you are using above.
 
 ```
 http://gopkg.in/ibm-blockchain/learn-chaincode.v1/finished
@@ -327,7 +308,8 @@ In order to deploy chaincode through the REST interface, you will need to have t
     "params": {
       "type": 1,
       "chaincodeID": {
-        "path": "https://github.com/<YOUR_GITHUB_ID_HERE>/learn-chaincode/finished"
+        "path": "https://github.com/<YOUR_GITHUB_ID_HERE>/learn-chaincode/finished",
+        "name": "mycc"
       },
       "ctorMsg": {
         "function": "init",
@@ -342,6 +324,8 @@ In order to deploy chaincode through the REST interface, you will need to have t
   ```
 
 - The `"path":` is the path to your fork of the repository on Github, going one more directory down into `/finished`, where your `chaincode_finished.go` file lives.
+
+- The `"name":` is the name you give, which is required in development mode. Otherwise you will get error message saying Chaincode name is missing.
 
 - Send the request. If everything goes smoothly, you will see a response like the one below
 
