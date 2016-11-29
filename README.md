@@ -370,6 +370,7 @@ Next, let's query the chaincode for the value of `hello_world`, the key we set w
 
 Hopefully you see that the value of `hello_world` is "hi there", as you specified in the body of the deploy request.
 
+- If you are in "developer mode", you will likely to get error. In this case, you have to do the register through CLI first and re-deploy the chaincode. Check if you have --peer-chaincodedev option when you start your peer node. 
 ### Invoke
 
 Next, call your generic `write` function by invoking your chaincode and changing the value of "hello_world" to "go away".
